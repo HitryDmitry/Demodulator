@@ -1,0 +1,1 @@
+/usr/bin/clang++ -DQT_QML_DEBUG -g -rdynamic CMakeFiles/Printer_t.dir/test/main.cpp.o CMakeFiles/Printer_t.dir/test/printer_test.cpp.o -o ../../../test/Printer_t  -Wl,-rpath,/home/dmirty/tddProject/build/Desktop-Debug/tddProject/binaries/lib ../../../tddProject/binaries/lib/libPrinter.so ../../../tddProject/binaries/lib/libgtest.so 

@@ -1,0 +1,1 @@
+/usr/bin/clang++ -fPIC -DQT_QML_DEBUG -g -shared -Wl,-soname,libPrinter.so -o ../../../tddProject/binaries/lib/libPrinter.so CMakeFiles/Printer.dir/source/printer.cpp.o 

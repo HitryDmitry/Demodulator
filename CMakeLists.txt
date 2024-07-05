@@ -19,13 +19,18 @@ elseif(WIN32)
 endif()
 
 if(UNITTEST)
-        add_subdirectory(googletests/)
+	add_subdirectory(googletests/gtest)
 endif()
 
 
 add_subdirectory(TestTask/libs/printer)
 
 add_subdirectory(TestTask/libs/exampleProject)
+
+add_subdirectory(TestTask/libs/tinywav)
+
+add_subdirectory(TestTask/libs/Demodulator)
+
 
 if(UNITTEST)
         message(" output lib dir " ${CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG})
@@ -35,7 +40,7 @@ endif()
 
 add_executable(tddProject main.cpp)
 
-target_link_libraries(${PROJECT_NAME} Printer)
+target_link_libraries(${PROJECT_NAME} Demodulator Printer exampleProject)
 
 if(UNIX)
         add_custom_target( distclean COMMAND find . -name *_automoc.cpp -type f -delete

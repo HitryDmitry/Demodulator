@@ -1,0 +1,273 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6,
+						11
+					]
+				},
+				{
+					"build" : "googletests/gtest",
+					"jsonFile" : "directory-googletests.gtest-Release-76592a4968c4e03a0628.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "googletests/gtest",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "TestTask/libs/printer",
+					"jsonFile" : "directory-TestTask.libs.printer-Release-03b5b85ae7298c422417.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "TestTask/libs/printer",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "TestTask/libs/exampleProject",
+					"jsonFile" : "directory-TestTask.libs.exampleProject-Release-575ca9840940ce145779.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "TestTask/libs/exampleProject",
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "TestTask/libs/Demodulator",
+					"jsonFile" : "directory-TestTask.libs.Demodulator-Release-074d1beecf6dcd36b431.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "TestTask/libs/Demodulator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tddProject",
+					"targetIndexes" : 
+					[
+						6,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Printer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "exampleProject",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "Demodulator",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "Demodulator::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator-Release-1078d47cf7fb0aeb860a.json",
+					"name" : "Demodulator",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demodulator_t::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator_t-Release-8df31e77b1b3147491e3.json",
+					"name" : "Demodulator_t",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demodulator_tconf::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator_tconf-Release-729dc9cbdbc317610c29.json",
+					"name" : "Demodulator_tconf",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer-Release-9b84e264aa0899788022.json",
+					"name" : "Printer",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer_t::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_t-Release-75bc83e71b394f3ecda7.json",
+					"name" : "Printer_t",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer_tconf::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_tconf-Release-f9d8b743d7d6a2b0e9b1.json",
+					"name" : "Printer_tconf",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "distclean::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-distclean-Release-797d78dfc84de305a3ac.json",
+					"name" : "distclean",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject-Release-7c300a4af957ad914577.json",
+					"name" : "exampleProject",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject_t::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_t-Release-835e0f2625d0bf4ce8ac.json",
+					"name" : "exampleProject_t",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject_tconf::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_tconf-Release-2fde94accab90e63bbc5.json",
+					"name" : "exampleProject_tconf",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest::@9a0cee8afed2a44c6706",
+					"jsonFile" : "target-gtest-Release-5ae610f38560ed280982.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tddProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tddProject-Release-70c6e21bf06959187328.json",
+					"name" : "tddProject",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dmirty/tddProject/build/Desktop-Release",
+		"source" : "/home/dmirty/tddProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

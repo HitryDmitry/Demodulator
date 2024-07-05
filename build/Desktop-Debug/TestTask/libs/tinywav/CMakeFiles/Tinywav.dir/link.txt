@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTinywav.a CMakeFiles/Tinywav.dir/tinywav.c.o
+/usr/bin/ranlib libTinywav.a

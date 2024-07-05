@@ -1,0 +1,1 @@
+/usr/bin/clang++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libPrinter.so -o ../../../tddProject/binaries/lib/libPrinter.so CMakeFiles/Printer.dir/source/printer.cpp.o 

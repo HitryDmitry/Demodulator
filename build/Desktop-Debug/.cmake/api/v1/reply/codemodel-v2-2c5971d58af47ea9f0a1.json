@@ -1,0 +1,318 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						8,
+						13
+					]
+				},
+				{
+					"build" : "googletests/gtest",
+					"jsonFile" : "directory-googletests.gtest-Debug-76592a4968c4e03a0628.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "googletests/gtest",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "TestTask/libs/printer",
+					"jsonFile" : "directory-TestTask.libs.printer-Debug-03b5b85ae7298c422417.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "TestTask/libs/printer",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "TestTask/libs/exampleProject",
+					"jsonFile" : "directory-TestTask.libs.exampleProject-Debug-575ca9840940ce145779.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "TestTask/libs/exampleProject",
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "TestTask/libs/tinywav",
+					"jsonFile" : "directory-TestTask.libs.tinywav-Debug-24a04c3eb786937d90e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "TestTask/libs/tinywav",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "TestTask/libs/Demodulator",
+					"jsonFile" : "directory-TestTask.libs.Demodulator-Debug-074d1beecf6dcd36b431.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "TestTask/libs/Demodulator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tddProject",
+					"targetIndexes" : 
+					[
+						8,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Printer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "exampleProject",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "Tinywav",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Demodulator",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "Demodulator::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator-Debug-49d781982d661edaf432.json",
+					"name" : "Demodulator",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Demodulator_t::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator_t-Debug-ce49ebe2cf31ca903d87.json",
+					"name" : "Demodulator_t",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Demodulator_tconf::@750c9a767014214aaf4c",
+					"jsonFile" : "target-Demodulator_tconf-Debug-729dc9cbdbc317610c29.json",
+					"name" : "Demodulator_tconf",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer-Debug-96e44d9cb4ab655150cc.json",
+					"name" : "Printer",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer_t::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_t-Debug-143acec279d5a6740f21.json",
+					"name" : "Printer_t",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Printer_tconf::@2943423362c741623ec0",
+					"jsonFile" : "target-Printer_tconf-Debug-f9d8b743d7d6a2b0e9b1.json",
+					"name" : "Printer_tconf",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Tinywav::@3a1a56b7b50ac43b2b93",
+					"jsonFile" : "target-Tinywav-Debug-8a04105d8248a425f103.json",
+					"name" : "Tinywav",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "TinywavTest::@3a1a56b7b50ac43b2b93",
+					"jsonFile" : "target-TinywavTest-Debug-e0460bbee5a0fe582df0.json",
+					"name" : "TinywavTest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "distclean::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-distclean-Debug-b88a66ff51b285a44ddb.json",
+					"name" : "distclean",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject-Debug-63e98011032e27c8e405.json",
+					"name" : "exampleProject",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject_t::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_t-Debug-be1fcbb7260a42be10a0.json",
+					"name" : "exampleProject_t",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "exampleProject_tconf::@8f84c6beb3f63cf079c8",
+					"jsonFile" : "target-exampleProject_tconf-Debug-2fde94accab90e63bbc5.json",
+					"name" : "exampleProject_tconf",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest::@9a0cee8afed2a44c6706",
+					"jsonFile" : "target-gtest-Debug-e00db1da060704ee9bb8.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tddProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tddProject-Debug-d0253a999a15aa4d84c8.json",
+					"name" : "tddProject",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dmirty/tddProject/build/Desktop-Debug",
+		"source" : "/home/dmirty/tddProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

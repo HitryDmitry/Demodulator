@@ -1,0 +1,1 @@
+/usr/bin/clang++ -fPIC -DQT_QML_DEBUG -g -shared -Wl,-soname,libDemodulator.so -o ../../../tddProject/binaries/lib/libDemodulator.so CMakeFiles/Demodulator.dir/source/Demodulator.cpp.o  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3 ../tinywav/libTinywav.a /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3 
