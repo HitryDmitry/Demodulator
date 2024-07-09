@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tddProject/binaries/lib/libDemodulator.so"
+			"path" : "tddProject/binaries/tddProject"
 		}
 	],
 	"backtrace" : 1,
@@ -10,13 +10,12 @@
 	{
 		"commands" : 
 		[
-			"add_library",
-			"target_link_libraries",
-			"target_include_directories"
+			"add_executable",
+			"target_link_libraries"
 		],
 		"files" : 
 		[
-			"TestTask/libs/Demodulator/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -26,31 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 17,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 13,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 14,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 15,
+				"line" : 43,
 				"parent" : 0
 			}
 		]
@@ -61,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DQT_QML_DEBUG -g -fPIC"
+					"fragment" : "-DQT_QML_DEBUG -g"
 				},
 				{
 					"backtrace" : 2,
@@ -70,9 +51,6 @@
 			],
 			"defines" : 
 			[
-				{
-					"define" : "Demodulator_EXPORTS"
-				},
 				{
 					"backtrace" : 2,
 					"define" : "QT_CORE_LIB"
@@ -89,26 +67,30 @@
 			"includes" : 
 			[
 				{
-					"path" : "/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/Demodulator"
+					"path" : "/home/dmirty/tddProject/build/Desktop-Debug"
 				},
 				{
-					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator"
+					"path" : "/home/dmirty/tddProject"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/include"
 				},
 				{
-					"backtrace" : 4,
-					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/lib"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/include/Demodulator"
+					"backtrace" : 2,
+					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/source"
 				},
 				{
 					"backtrace" : 2,
 					"path" : "/home/dmirty/tddProject/TestTask/libs/tinywav"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dmirty/tddProject/TestTask/libs/printer/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dmirty/tddProject/TestTask/libs/exampleProject/include"
 				},
 				{
 					"backtrace" : 2,
@@ -139,7 +121,7 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				1
+				0
 			]
 		}
 	],
@@ -147,62 +129,98 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "Printer::@2943423362c741623ec0"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exampleProject::@8f84c6beb3f63cf079c8"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "Tinywav::@3a1a56b7b50ac43b2b93"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Demodulator::@750c9a767014214aaf4c"
 		}
 	],
-	"id" : "Demodulator::@750c9a767014214aaf4c",
+	"id" : "tddProject::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-DQT_QML_DEBUG -g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
+				"fragment" : "-Wl,-rpath,/home/dmirty/tddProject/build/Desktop-Debug/tddProject/binaries/lib",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 2,
+				"fragment" : "tddProject/binaries/lib/libDemodulator.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "tddProject/binaries/lib/libPrinter.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "tddProject/binaries/lib/libexampleProject.so",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
-				"fragment" : "../tinywav/libTinywav.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "TestTask/libs/tinywav/libTinywav.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "Demodulator",
-	"nameOnDisk" : "libDemodulator.so",
+	"name" : "tddProject",
+	"nameOnDisk" : "tddProject",
 	"paths" : 
 	{
-		"build" : "TestTask/libs/Demodulator",
-		"source" : "TestTask/libs/Demodulator"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				0
-			]
-		},
-		{
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				1
+				0
 			]
 		}
 	],
@@ -210,15 +228,10 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "TestTask/libs/Demodulator/include/Demodulator.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "TestTask/libs/Demodulator/source/Demodulator.cpp",
-			"sourceGroupIndex" : 1
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

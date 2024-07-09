@@ -301,11 +301,20 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/Demodulator_test.cpp
   ../../googletests/gtest/gtest/include/gtest/gtest-test-part.h \
   ../../googletests/gtest/gtest/include/gtest/gtest-typed-test.h \
   ../../googletests/gtest/gtest/include/gtest/gtest_pred_impl.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
   ../../TestTask/libs/Demodulator/include/Demodulator.h \
-  /usr/include/c++/11/fstream \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
@@ -318,8 +327,14 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/Demodulator_test.cpp
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
-  ../../TestTask/libs/tinywav/tinywav.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/stdbool.h
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  ../../TestTask/libs/Demodulator/source/Demodulator.cpp \
+  ../../TestTask/libs/Demodulator/include/wav.h \
+  /usr/include/c++/11/fstream \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc
 
 TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../TestTask/libs/Demodulator/test/main.cpp \
   ../../googletests/gtest/gtest/include/gtest/gtest.h \
@@ -625,7 +640,17 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 
 ../../TestTask/libs/Demodulator/test/main.cpp:
 
-/usr/lib/llvm-14/lib/clang/14.0.0/include/stdbool.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+/usr/include/c++/11/fstream:
+
+../../TestTask/libs/Demodulator/source/Demodulator.cpp:
+
+/usr/include/c++/11/bits/stl_numeric.h:
+
+/usr/include/c++/11/numeric:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
@@ -639,11 +664,25 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+/usr/include/c++/11/backward/auto_ptr.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/11/fstream:
+/usr/include/c++/11/bits/atomic_base.h:
+
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/11/ext/concurrence.h:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/c++/11/bit:
+
+/usr/include/c++/11/bits/align.h:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/11/memory:
 
 ../../googletests/gtest/gtest/include/gtest/gtest-typed-test.h:
 
@@ -705,9 +744,13 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
+/usr/include/c++/11/bits/shared_ptr.h:
+
 /usr/include/c++/11/bits/stl_construct.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/c++/11/bits/basic_string.h:
 
@@ -877,6 +920,8 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/include/c++/11/bits/refwrap.h:
+
 /usr/include/linux/stddef.h:
 
 /usr/include/c++/11/ext/type_traits.h:
@@ -932,8 +977,6 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 /usr/include/features.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
-
-../../TestTask/libs/tinywav/tinywav.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
@@ -1168,6 +1211,8 @@ TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/test/main.cpp.o: ../../Te
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
 /usr/include/linux/types.h:
+
+../../TestTask/libs/Demodulator/include/wav.h:
 
 /usr/include/asm-generic/types.h:
 

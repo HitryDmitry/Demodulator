@@ -29,7 +29,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 25,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -105,6 +105,10 @@
 				{
 					"backtrace" : 4,
 					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/dmirty/tddProject/TestTask/libs/Demodulator/source"
 				},
 				{
 					"backtrace" : 4,

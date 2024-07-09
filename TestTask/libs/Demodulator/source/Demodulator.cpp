@@ -1,8 +1,9 @@
 #include "Demodulator.h"
 #include "wav.h"
 
+// ------------------------- вспомогательные функции --------------------------------------
 // direct form II transposed
-std::vector<float> filter(std::vector<float> B, std::vector<float> A, std::vector<float>& inputSignal)
+std::vector<float> filter(std::vector<float>& B, std::vector<float>& A, const std::vector<float>& inputSignal)
 {
     int filterOrder = std::max(B.size(), A.size()) - 1;
     int lengthOfA   = A.size();
@@ -50,20 +51,6 @@ void butter(std::vector<float>& B, std::vector<float>& A, float fc, float fs, bo
     A[1] = (1 - k / q + k2) * norm;
 }
 
-// float getCoefficientsOfButterworthFilter(std::vector<float>& B, std::vector<float>& A, float fc, float fs)
-// {
-//     float cyclicCutOffFreq = 2 * M_PI * fc / fs;
-//     float alpha            = tan(cyclicCutOffFreq / 2);
-
-//     float gain = alpha * alpha / (1 + sqrt(2) * alpha + alpha * alpha);
-//     A[0]       = 2 * (alpha * alpha - 1) / (1 + sqrt(2) * alpha + alpha * alpha);
-//     A[1]       = (1 + sqrt(2) * alpha + alpha * alpha) / (1 + sqrt(2) * alpha + alpha * alpha);
-//     B[0]       = 2 * gain;
-//     B[1]       = gain;
-
-//     return gain;
-// }
-
 std::vector<std::complex<float>> lowpass(float cutOffFreqHz, float samplingFreqHz,
                                          std::vector<std::complex<float>>& complexNumbers)
 {
@@ -77,7 +64,7 @@ std::vector<std::complex<float>> lowpass(float cutOffFreqHz, float samplingFreqH
         filteredSignal[i] = gain * complexNumbers[i] + B[0] * complexNumbers[i - 1] + B[1] * complexNumbers[i - 2] -
                             A[0] * filteredSignal[i - 1] - A[1] * filteredSignal[i - 2];
     }
-    _t return filteredSignal;
+    return filteredSignal;
 }
 
 std::vector<float> lowpass(float cutOffFreqHz, float samplingFreqHz, std::vector<float>& complexNumbers)
@@ -94,38 +81,6 @@ std::vector<float> lowpass(float cutOffFreqHz, float samplingFreqHz, std::vector
     return filteredSignal;
 }
 
-std::vector<std::complex<float>> getComplexSignalFromBinaryFile(const char* filename)
-{
-    std::ifstream ifs(filename, std::ios::binary | std::ios::in);
-    // вычисляем количество элементов
-    int legthOfFileInBytes = 0;
-    if(ifs) {
-        ifs.seekg(0, ifs.end);
-        legthOfFileInBytes = ifs.tellg();
-        ifs.seekg(0, ifs.beg);
-    }
-    int numOfComplexNumbers = legthOfFileInBytes / sizeof(float) / 2;
-    std::vector<std::complex<float>> complexNumbers(numOfComplexNumbers);
-    ifs.read(reinterpret_cast<char*>(complexNumbers.data()), legthOfFileInBytes);
-    ifs.close();
-    return complexNumbers;
-}
-
-std::vector<float> demodulateAMSignal(std::vector<std::complex<int>> signalComplexSamples, int normilizingPower,
-                                      float DCcomponent) // нормировка внутри по умолчанию. Убрать лишние параметры
-{
-    std::vector<float> modulatingSignal(0);
-    for(auto complexNumber: signalComplexSamples) {
-        // добавляем в вектор, содержащий отсчеты сигнала, модуль комплексного отсчета,
-        // умноженный на 10^-5 и вычитаем постоянную составляющую (3.2)
-        modulatingSignal.push_back(std::sqrt(pow(complexNumber.imag(), 2) + pow(complexNumber.real(), 2)) *
-                                       pow(10, normilizingPower) -
-                                   DCcomponent);
-    }
-
-    return modulatingSignal;
-}
-
 std::vector<float> averageFilter(std::vector<float> inputSignal, int windowSize)
 {
     std::vector<float> a = {1};
@@ -137,31 +92,71 @@ std::vector<float> averageFilter(std::vector<float> inputSignal, int windowSize)
     return filter(b, a, inputSignal);
 }
 
-std::vector<float> hammingWindow(int windowSize)
+std::vector<std::complex<float>> downsample(std::vector<std::complex<float>>& complexSamples, int decimationFactor)
 {
-    std::vector<float> w(windoSize);
-    for(int i = 0; i <= windoSize; ++i)
-        w.push_back(0.54 - 0.46 * cos(2 * M_PI * i / windoSize));
-    return w;
+    std::vector<std::complex<float>> downsampledSignal(0);
+    for(int i = 0; i < complexSamples.size(); i += decimationFactor)
+        downsampledSignal.push_back(complexSamples[i]);
+    return downsampledSignal;
 }
 
-std::vector<float> vectorOfImpulseResponceOfderivFilter()
+std::vector<float> downsample(std::vector<float>& signalFloat, int decimationFactor)
 {
-    // Задержка фильтра во времени
-    const int32_t L = 19;
-    // окно Хэмминга для определенного значения задержки
-    std::vector<float> hamming = hammingWindow(2 * L + 1);
-    // Импульсная характеристика дифференцирующего фильтра
-    std::vector<float> impulseResponce(0);
-    for(int i = 0; i < L * 2 + 1; ++i) {
-        if(i == 0)
-            impulseResponce.push_back(0);
-        impulseResponce.push_back(hamming[i] * pow(-1, i - 19) / (i - 19));
+    std::vector<float> downsampledSignal(0);
+    for(int i = 0; i < signalFloat.size(); i += decimationFactor)
+        downsampledSignal.push_back(signalFloat[i]);
+    return downsampledSignal;
+}
+
+//------------------------------ функции классов -----------------------------------------------
+template <typename T>
+std::vector<std::complex<T>> IDemodulator<T>::getComplexSignalFromBinaryFile(std::string& filename)
+{
+    std::ifstream ifs(filename, std::ios::binary | std::ios::in);
+    // вычисляем количество элементов
+    int legthOfFileInBytes = 0;
+    if(ifs) {
+        ifs.seekg(0, ifs.end);
+        legthOfFileInBytes = ifs.tellg();
+        ifs.seekg(0, ifs.beg);
     }
-    return impulseResponce;
+    int numOfComplexNumbers = legthOfFileInBytes / sizeof(T) / 2;
+    std::vector<std::complex<T>> complexNumbers(numOfComplexNumbers);
+    ifs.read(reinterpret_cast<char*>(complexNumbers.data()), legthOfFileInBytes);
+    ifs.close();
+    return complexNumbers;
 }
 
-std::vector<float> demodulateFMSignal(std::vector<std::complex<float>> complexSamples)
+template <typename T>
+void IDemodulator<T>::writeToWavFile(std::string filename, std::vector<float>& demodulatedSignal, int sampleRate)
+{
+    WavFile<float_t> wavFileCore(filename, demodulatedSignal.size(), sampleRate);
+    wavFileCore.writeDataBlock(demodulatedSignal);
+}
+
+std::vector<float> AmplitudeDemodulator::demodulate(std::vector<std::complex<int>>& complexSamples)
+{
+    std::vector<float> modulatingSignal(0);
+    for(auto complexNumber: complexSamples) {
+        modulatingSignal.push_back(std::sqrt(pow(complexNumber.imag(), 2) + pow(complexNumber.real(), 2)));
+    }
+
+    float average = 0;
+    for(auto elem: modulatingSignal) {
+        average += elem / modulatingSignal.size();
+    }
+
+    for(int i = 0; i < modulatingSignal.size(); ++i) {
+        modulatingSignal[i] -= average;
+        modulatingSignal[i] /= average;
+    }
+
+    modulatingSignal = averageFilter(modulatingSignal, 10);
+
+    return modulatingSignal;
+}
+
+std::vector<float> FrequencyDemodulator::demodulate(std::vector<std::complex<float>>& complexSamples)
 {
     std::vector<float> demodulatedSignal(0);
     for(int i = 0; i < complexSamples.size() - 1; ++i) {
@@ -169,34 +164,10 @@ std::vector<float> demodulateFMSignal(std::vector<std::complex<float>> complexSa
         demodulatedSignal.push_back(std::atan2(mul.imag(), mul.real()));
     }
 
+    // Фильтрация. Пропускаем через ФНЧ с частотой среза, совпадающещей с новой частотой Найквиста
+    demodulatedSignal = lowpass(10000, 20000, demodulatedSignal);
+    // Проводим downsampling
+    demodulatedSignal = downsample(demodulatedSignal, 25);
+
     return demodulatedSignal;
-}
-
-std::vector<std::complex<float>> downsample(std::vector<std::complex<float>> complexSignal, int decimationFactor)
-{
-    std::vector<std::complex<float>> downsampledSignal(0);
-    for(int i = 0; i < complexSignal.size(); i += decimationFactor)
-        downsampledSignal.push_back(complexSignal[i]);
-    return downsampledSignal;
-}
-
-std::vector<float> downsample(std::vector<float> signal, int decimationFactor)
-{
-    std::vector<float> downsampledSignal(0);
-    for(int i = 0; i < signal.size(); i += decimationFactor)
-        downsampledSignal.push_back(signal[i]);
-    return downsampledSignal;
-}
-
-void writeToDatFile(const char* filename, std::vector<int> dataSequence)
-{
-    std::ofstream ofs(filename, std::ios::out | std::ios::binary);
-    ofs.write(reinterpret_cast<char*>(dataSequence.data()), dataSequence.size() * sizeof(int));
-    ofs.close();
-}
-
-void writeToWavFile(std::string outputPath, std::vector<float> demodulatedSignal, int sampleRate)
-{
-    WavFile<float_t> wavFileCore(outputPath, demodulatedSignal.size(), sampleRate);
-    wavFileCore.writeDataBlock(demodulatedSignal);
 }
