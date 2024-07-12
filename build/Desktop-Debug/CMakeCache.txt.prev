@@ -261,6 +261,9 @@ Printer_SOURCE_DIR:STATIC=/home/dmirty/tddProject/TestTask/libs/printer
 //Skip Qt Creator's package manager auto-setup
 QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP:BOOL=OFF
 
+//The directory containing a CMake configuration file for QT.
+QT_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
+
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:FILEPATH=/usr/lib/qt5/bin/qmake
 
@@ -284,6 +287,15 @@ Tinywav_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 Tinywav_SOURCE_DIR:STATIC=/home/dmirty/tddProject/TestTask/libs/tinywav
+
+//Value Computed by CMake
+UnorderedMap_BINARY_DIR:STATIC=/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/UnorderedMap
+
+//Value Computed by CMake
+UnorderedMap_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+UnorderedMap_SOURCE_DIR:STATIC=/home/dmirty/tddProject/TestTask/libs/UnorderedMap
 
 //Value Computed by CMake
 exampleProject_BINARY_DIR:STATIC=/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/exampleProject
@@ -416,7 +428,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

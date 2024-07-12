@@ -31,6 +31,8 @@ add_subdirectory(TestTask/libs/tinywav)
 
 add_subdirectory(TestTask/libs/Demodulator)
 
+add_subdirectory(TestTask/libs/UnorderedMap)
+
 
 if(UNITTEST)
         message(" output lib dir " ${CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG})

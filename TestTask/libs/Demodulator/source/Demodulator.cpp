@@ -110,7 +110,7 @@ std::vector<float> downsample(std::vector<float>& signalFloat, int decimationFac
 
 //------------------------------ функции классов -----------------------------------------------
 template <typename T>
-std::vector<std::complex<T>> IDemodulator<T>::getComplexSignalFromBinaryFile(std::string& filename)
+std::vector<std::complex<T>> FileManager<T>::getComplexSignalFromBinaryFile(std::string& filename)
 {
     std::ifstream ifs(filename, std::ios::binary | std::ios::in);
     // вычисляем количество элементов
@@ -128,7 +128,7 @@ std::vector<std::complex<T>> IDemodulator<T>::getComplexSignalFromBinaryFile(std
 }
 
 template <typename T>
-void IDemodulator<T>::writeToWavFile(std::string filename, std::vector<float>& demodulatedSignal, int sampleRate)
+void FileManager<T>::writeToWavFile(std::string filename, std::vector<float>& demodulatedSignal, int sampleRate)
 {
     WavFile<float_t> wavFileCore(filename, demodulatedSignal.size(), sampleRate);
     wavFileCore.writeDataBlock(demodulatedSignal);

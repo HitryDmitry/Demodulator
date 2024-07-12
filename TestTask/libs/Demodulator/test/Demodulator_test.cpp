@@ -131,12 +131,14 @@
  */
 TEST(DemodulatorTest, TestDemodulatorInterface)
 {
-    std::shared_ptr<IDemodulator<int>> D = std::make_shared<AmplitudeDemodulator>;
+    FileManager<int> F;
+
+    std::unique_ptr<IDemodulator<int>> D = std::make_unique<AmplitudeDemodulator>();
+    // IDemodulator<int>* D = new AmplitudeDemodulator();
     std::string filename("am_sound.dat");
-    std::vector<std::complex<int>> complexSamples = D->getComplexSignalFromBinaryFile(filename);
+    std::vector<std::complex<int>> complexSamples = F.getComplexSignalFromBinaryFile(filename);
     std::vector<float> demodulatedSignal          = D->demodulate(complexSamples);
-    D->writeToWavFile("demodulated_AM", demodulatedSignal, 32000);
-    // delete D;
+    F.writeToWavFile("demodulated_AM", demodulatedSignal, 32000);
 
     // auto* FD = new FrequencyDemodulator<float>();
     // std::string filename("file1EuropaPlus.bin");

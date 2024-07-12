@@ -1,0 +1,4 @@
+/home/dmirty/tddProject/TestTask/libs/UnorderedMap/build/Desktop-Debug/CMakeFiles/UnorderedMap.dir
+/home/dmirty/tddProject/TestTask/libs/UnorderedMap/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/dmirty/tddProject/TestTask/libs/UnorderedMap/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/dmirty/tddProject/TestTask/libs/UnorderedMap/build/Desktop-Debug/CMakeFiles/UnorderedMap_autogen.dir

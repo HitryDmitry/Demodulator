@@ -308,6 +308,45 @@ Demodulator_tconf/fast:
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/build.make TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/build
 .PHONY : Demodulator_tconf/fast
 
+#=============================================================================
+# Target rules for targets named UnorderedMap
+
+# Build rule for target.
+UnorderedMap: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UnorderedMap
+.PHONY : UnorderedMap
+
+# fast build rule for target.
+UnorderedMap/fast:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build
+.PHONY : UnorderedMap/fast
+
+#=============================================================================
+# Target rules for targets named UnorderedMap_t
+
+# Build rule for target.
+UnorderedMap_t: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UnorderedMap_t
+.PHONY : UnorderedMap_t
+
+# fast build rule for target.
+UnorderedMap_t/fast:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build
+.PHONY : UnorderedMap_t/fast
+
+#=============================================================================
+# Target rules for targets named UnorderedMap_tconf
+
+# Build rule for target.
+UnorderedMap_tconf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UnorderedMap_tconf
+.PHONY : UnorderedMap_tconf
+
+# fast build rule for target.
+UnorderedMap_tconf/fast:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build
+.PHONY : UnorderedMap_tconf/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -343,6 +382,7 @@ help:
 	@echo "... test"
 	@echo "... Demodulator_tconf"
 	@echo "... Printer_tconf"
+	@echo "... UnorderedMap_tconf"
 	@echo "... distclean"
 	@echo "... exampleProject_tconf"
 	@echo "... Demodulator"
@@ -351,6 +391,8 @@ help:
 	@echo "... Printer_t"
 	@echo "... Tinywav"
 	@echo "... TinywavTest"
+	@echo "... UnorderedMap"
+	@echo "... UnorderedMap_t"
 	@echo "... exampleProject"
 	@echo "... exampleProject_t"
 	@echo "... gtest"

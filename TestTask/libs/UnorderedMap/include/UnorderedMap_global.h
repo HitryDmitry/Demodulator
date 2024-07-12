@@ -1,0 +1,12 @@
+#ifndef UNORDEREDMAP_GLOBAL_H
+#define UNORDEREDMAP_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(UNORDEREDMAP_LIBRARY)
+#define UNORDEREDMAP_EXPORT Q_DECL_EXPORT
+#else
+#define UNORDEREDMAP_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // UNORDEREDMAP_GLOBAL_H

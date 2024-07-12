@@ -49,6 +49,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/exampleProject/cmake_install.cmake")
   include("/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/tinywav/cmake_install.cmake")
   include("/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/Demodulator/cmake_install.cmake")
+  include("/home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/UnorderedMap/cmake_install.cmake")
 
 endif()
 

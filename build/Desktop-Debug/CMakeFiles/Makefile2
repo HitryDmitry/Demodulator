@@ -69,6 +69,7 @@ all: TestTask/libs/printer/all
 all: TestTask/libs/exampleProject/all
 all: TestTask/libs/tinywav/all
 all: TestTask/libs/Demodulator/all
+all: TestTask/libs/UnorderedMap/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -77,6 +78,7 @@ preinstall: TestTask/libs/printer/preinstall
 preinstall: TestTask/libs/exampleProject/preinstall
 preinstall: TestTask/libs/tinywav/preinstall
 preinstall: TestTask/libs/Demodulator/preinstall
+preinstall: TestTask/libs/UnorderedMap/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -87,6 +89,7 @@ clean: TestTask/libs/printer/clean
 clean: TestTask/libs/exampleProject/clean
 clean: TestTask/libs/tinywav/clean
 clean: TestTask/libs/Demodulator/clean
+clean: TestTask/libs/UnorderedMap/clean
 .PHONY : clean
 
 #=============================================================================
@@ -106,6 +109,24 @@ TestTask/libs/Demodulator/clean: TestTask/libs/Demodulator/CMakeFiles/Demodulato
 TestTask/libs/Demodulator/clean: TestTask/libs/Demodulator/CMakeFiles/Demodulator_t.dir/clean
 TestTask/libs/Demodulator/clean: TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/clean
 .PHONY : TestTask/libs/Demodulator/clean
+
+#=============================================================================
+# Directory level rules for directory TestTask/libs/UnorderedMap
+
+# Recursive "all" directory target.
+TestTask/libs/UnorderedMap/all: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/all
+TestTask/libs/UnorderedMap/all: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all
+.PHONY : TestTask/libs/UnorderedMap/all
+
+# Recursive "preinstall" directory target.
+TestTask/libs/UnorderedMap/preinstall:
+.PHONY : TestTask/libs/UnorderedMap/preinstall
+
+# Recursive "clean" directory target.
+TestTask/libs/UnorderedMap/clean: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/clean
+TestTask/libs/UnorderedMap/clean: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/clean
+TestTask/libs/UnorderedMap/clean: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/clean
+.PHONY : TestTask/libs/UnorderedMap/clean
 
 #=============================================================================
 # Directory level rules for directory TestTask/libs/exampleProject
@@ -185,7 +206,7 @@ CMakeFiles/tddProject.dir/all: TestTask/libs/tinywav/CMakeFiles/Tinywav.dir/all
 CMakeFiles/tddProject.dir/all: TestTask/libs/Demodulator/CMakeFiles/Demodulator.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tddProject.dir/build.make CMakeFiles/tddProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tddProject.dir/build.make CMakeFiles/tddProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=25,26 "Built target tddProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=30,31 "Built target tddProject"
 .PHONY : CMakeFiles/tddProject.dir/all
 
 # Build rule for subdir invocation for target.
@@ -237,7 +258,7 @@ CMakeFiles/distclean.dir/clean:
 googletests/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f googletests/gtest/CMakeFiles/gtest.dir/build.make googletests/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletests/gtest/CMakeFiles/gtest.dir/build.make googletests/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=22,23,24 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=27,28,29 "Built target gtest"
 .PHONY : googletests/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -343,7 +364,7 @@ TestTask/libs/printer/CMakeFiles/Printer_tconf.dir/clean:
 TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/all:
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/build.make TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/build.make TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=17,18 "Built target exampleProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=22,23 "Built target exampleProject"
 .PHONY : TestTask/libs/exampleProject/CMakeFiles/exampleProject.dir/all
 
 # Build rule for subdir invocation for target.
@@ -371,7 +392,7 @@ TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/all: TestTask/libs/
 TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/all: TestTask/libs/exampleProject/CMakeFiles/exampleProject_tconf.dir/all
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/build.make TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/depend
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/build.make TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=19,20,21 "Built target exampleProject_t"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=24,25,26 "Built target exampleProject_t"
 .PHONY : TestTask/libs/exampleProject/CMakeFiles/exampleProject_t.dir/all
 
 # Build rule for subdir invocation for target.
@@ -548,6 +569,86 @@ Demodulator_tconf: TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/ru
 TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/clean:
 	$(MAKE) $(MAKESILENT) -f TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/build.make TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/clean
 .PHONY : TestTask/libs/Demodulator/CMakeFiles/Demodulator_tconf.dir/clean
+
+#=============================================================================
+# Target rules for target TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir
+
+# All Build rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/all:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/depend
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=17,18 "Built target UnorderedMap"
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/all
+
+# Build rule for subdir invocation for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 0
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/rule
+
+# Convenience name for target.
+UnorderedMap: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/rule
+.PHONY : UnorderedMap
+
+# clean rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/clean:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/clean
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/clean
+
+#=============================================================================
+# Target rules for target TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir
+
+# All Build rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all: googletests/gtest/CMakeFiles/gtest.dir/all
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/all
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/all
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/depend
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=19,20,21 "Built target UnorderedMap_t"
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all
+
+# Build rule for subdir invocation for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 0
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/rule
+
+# Convenience name for target.
+UnorderedMap_t: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/rule
+.PHONY : UnorderedMap_t
+
+# clean rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/clean:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/clean
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/clean
+
+#=============================================================================
+# Target rules for target TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir
+
+# All Build rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/all:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/depend
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num= "Built target UnorderedMap_tconf"
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/all
+
+# Build rule for subdir invocation for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles 0
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/rule
+
+# Convenience name for target.
+UnorderedMap_tconf: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/rule
+.PHONY : UnorderedMap_tconf
+
+# clean rule for target.
+TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/clean:
+	$(MAKE) $(MAKESILENT) -f TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/build.make TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/clean
+.PHONY : TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_tconf.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

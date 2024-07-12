@@ -10,23 +10,25 @@
 // class Waw;
 // изучить forward declaration
 
-// class FileManager {
-
-// };
+template <class T>
+class FileManager {
+public:
+    std::vector<std::complex<T>> getComplexSignalFromBinaryFile(std::string& filename);
+    void writeToWavFile(std::string filename, std::vector<float>& demodulatedSignal, int sampleRate);
+};
 
 template <class T>
 class IDemodulator {
 public:
+    virtual ~IDemodulator()                                                             = default;
     virtual std::vector<float> demodulate(std::vector<std::complex<T>>& complexSamples) = 0;
-
-    std::vector<std::complex<T>> getComplexSignalFromBinaryFile(std::string& filename);
-
-    void writeToWavFile(std::string filename, std::vector<float>& demodulatedSignal, int sampleRate);
 };
 
 class AmplitudeDemodulator : public IDemodulator<int> {
 public:
     AmplitudeDemodulator()
+    {}
+    ~AmplitudeDemodulator()
     {}
     std::vector<float> demodulate(std::vector<std::complex<int>>& complexSamples) override;
 };
@@ -34,6 +36,8 @@ public:
 class FrequencyDemodulator : public IDemodulator<float> {
 public:
     FrequencyDemodulator()
+    {}
+    ~FrequencyDemodulator()
     {}
     std::vector<float> demodulate(std::vector<std::complex<float>>& complexSamples) override;
 };
