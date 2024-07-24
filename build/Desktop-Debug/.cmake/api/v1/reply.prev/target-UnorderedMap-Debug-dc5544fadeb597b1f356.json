@@ -118,10 +118,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/dmirty/tddProject/TestTask/libs/tinywav"
-				},
-				{
-					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5"
 				},
@@ -153,13 +149,6 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "Tinywav::@3a1a56b7b50ac43b2b93"
-		}
-	],
 	"id" : "UnorderedMap::@6b1aa9f3150812fc0166",
 	"link" : 
 	{
@@ -172,11 +161,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "../tinywav/libTinywav.a",
 				"role" : "libraries"
 			},
 			{

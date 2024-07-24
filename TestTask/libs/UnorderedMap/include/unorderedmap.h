@@ -6,61 +6,116 @@
 
 template <class Key, class Value>
 struct Pair {
+public:
     Pair()
     {}
     Pair(Key key, Value value) : key(key), value(value)
     {}
-    Key key;
-    Value value;
-    int bucketId   = -1;
-    Pair* nextPair = nullptr;
-};
+    Pair(Pair& p) : key(p.key), value(p.value), bucketId(p.bucketId), nextPair(p.nextPair)
+    {}
+    // copy assignment constructor
+    Pair& operator=(const Pair& p)
+    {
+        if(this != &p) {
+            this->bucketId = p.bucketId;
+            this->key      = p.key;
+            this->value    = p.value;
+            this->nextPair = p.nextPair;
+        }
+        return *this;
+    }
+    ~Pair()
+    {
+        if(nextPair)
+            delete nextPair;
+    }
 
-template <class Key, class Value>
-struct Bucket {
-    Bucket()
-    {}
-    Bucket(Key key, Value value) : key(key), value(value)
-    {}
     Key key;
     Value value;
-    int bucketId       = -1;
-    Bucket* nextBacket = nullptr;
+    int bucketId    = -1;
+    Pair* nextPair  = nullptr;
+    bool objOnStack = false;
 };
 
 template <class Key, class Value>
 class UnorderedMap {
 public:
     UnorderedMap() : numberOfBuckets(13), bucketPointersArray(new Pair<Key, Value>[numberOfBuckets])
+    {}
+
+    // list constructor
+    UnorderedMap(const std::initializer_list<UnorderedMap<Key, Value>>& init)
+    {}
+
+    UnorderedMap(Key k, Value v)
     {
-        // for(int i = 0; i < numberOfBuckets; ++i) {
-        //     bucketPointersArray + 1 = nullptr;
-        // }
+        if(!bucketPointersArray) {
+            numberOfBuckets     = 13;
+            bucketPointersArray = new Pair<Key, Value>[numberOfBuckets];
+        }
+        this->insert(k, v);
     }
+
+    // copy constructor
+    UnorderedMap(const UnorderedMap<Key, Value>& objToCopy)
+    {
+        this->numberOfBuckets     = objToCopy.numberOfBuckets;
+        this->bucketPointersArray = new Pair<Key, Value>[this->numberOfBuckets];
+
+        for(int i = 0; i < this->numberOfBuckets; ++i) {
+            // // копируем первый объект
+            // this->bucketPointersArray[i] = objToCopy.bucketPointersArray[i];
+
+            // указатель на первую пару копируемого объекта
+            Pair<Key, Value>* pairOfobjToCopy = objToCopy.bucketPointersArray + i;
+
+            while(pairOfobjToCopy->nextPair != nullptr) {
+                this->insert(pairOfobjToCopy->key, pairOfobjToCopy->value);
+                pairOfobjToCopy = pairOfobjToCopy->nextPair;
+            }
+        }
+    }
+
+    // assignment operator
+    UnorderedMap& operator=(const UnorderedMap<Key, Value>& objectToAssign)
+    {}
 
     void insert(Key key, Value value)
     {
-        unsigned int indexOfBucketToInsert = hasher(key) % 13;
-        // создаем новый объект Pair
-        Pair<Key, Value> pairToInsert(key, value);
-        // Pair<Key, Value>* tmp = new Pair<Key, Value>(key, value);
-        // проверяем полученный индекс
-        if(bucketPointersArray[indexOfBucketToInsert].bucketId != -1) {
-            // записываем Pair, который содержался в корзине, во временную копию
-            Pair<Key, Value> tmp = bucketPointersArray[indexOfBucketToInsert];
-            //
-            bucketPointersArray[indexOfBucketToInsert] = pairToInsert;
-            pairToInsert.nextPair                      = &tmp;
-        }
-        else {
-            // указатель по индексу indexOfBucketToInsert указывает на полученный выше объект
-            pairToInsert.bucketId                      = indexOfBucketToInsert;
-            bucketPointersArray[indexOfBucketToInsert] = pairToInsert;
-        }
+        int indexOfBucketToInsert = hasher(key) % 13;
+
+        // записываем Pair, который содержался в корзине, во временную копию
+        Pair<Key, Value>* tmp                      = new Pair<Key, Value>(bucketPointersArray[indexOfBucketToInsert]);
+        tmp->bucketId                              = indexOfBucketToInsert;
+        bucketPointersArray[indexOfBucketToInsert] = Pair<Key, Value>(key, value);
+        bucketPointersArray[indexOfBucketToInsert].nextPair = tmp;
     }
 
-    Value get()
-    {}
+    Value get(Key key)
+    {
+        Value searchResult;
+        // получаем id ключа для поиска
+        int targetIndex     = hasher(key) % 13;
+        Pair<Key, Value>* b = bucketPointersArray + targetIndex;
+        searchResult        = b->value;
+        return searchResult;
+    }
+
+    void remove(Key key)
+    {
+        // получаем id ключа для поиска
+        int targetIndex = hasher(key) % 13;
+
+        Pair<Key, Value>* pairPtr = bucketPointersArray + targetIndex;
+        // pairPtr->objOnStack       = true;
+
+        if((bucketPointersArray + targetIndex)->nextPair) {
+            pairPtr                          = pairPtr->nextPair;
+            pairPtr->nextPair                = nullptr;
+            bucketPointersArray[targetIndex] = *(bucketPointersArray[targetIndex].nextPair);
+            delete pairPtr;
+        }
+    }
 
     ~UnorderedMap()
     {
@@ -68,17 +123,9 @@ public:
     }
 
 private:
-    // // позволяет вычислить номер корзины по ключу
-    // int hash(Key key)
-    // {
-    //     int remainder = numberOfBuckets % 8;
-    //     ++numberOfBuckets;
-    //     return remainder;
-    // }
-
     std::hash<Key> hasher;
-    int numberOfBuckets;
-    Pair<Key, Value>* bucketPointersArray;
+    int numberOfBuckets                   = 0;
+    Pair<Key, Value>* bucketPointersArray = nullptr;
 };
 
 // #include "unorderedmap.cpp"

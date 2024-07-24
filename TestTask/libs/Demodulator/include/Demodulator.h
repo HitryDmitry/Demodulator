@@ -24,22 +24,24 @@ public:
     virtual std::vector<float> demodulate(std::vector<std::complex<T>>& complexSamples) = 0;
 };
 
-class AmplitudeDemodulator : public IDemodulator<int> {
+template <class T>
+class AmplitudeDemodulator : public IDemodulator<T> {
 public:
     AmplitudeDemodulator()
     {}
     ~AmplitudeDemodulator()
     {}
-    std::vector<float> demodulate(std::vector<std::complex<int>>& complexSamples) override;
+    std::vector<float> demodulate(std::vector<std::complex<T>>& complexSamples) override;
 };
 
-class FrequencyDemodulator : public IDemodulator<float> {
+template <class T>
+class FrequencyDemodulator : public IDemodulator<T> {
 public:
     FrequencyDemodulator()
     {}
     ~FrequencyDemodulator()
     {}
-    std::vector<float> demodulate(std::vector<std::complex<float>>& complexSamples) override;
+    std::vector<float> demodulate(std::vector<std::complex<T>>& complexSamples) override;
 };
 
 #endif // DEMODULATOR_H

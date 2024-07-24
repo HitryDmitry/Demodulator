@@ -1,0 +1,37 @@
+==55789== Memcheck, a memory error detector
+==55789== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==55789== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==55789== Command: ./UnorderedMap_t
+==55789== Parent PID: 55377
+==55789== 
+--55789-- 
+--55789-- Valgrind options:
+--55789--    --leak-check=full
+--55789--    --show-leak-kinds=all
+--55789--    --track-origins=yes
+--55789--    --verbose
+--55789--    --log-file=valgrind-out.txt
+--55789-- Contents of /proc/version:
+--55789--   Linux version 6.5.0-44-generic (buildd@lcy02-amd64-103) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #44~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 18 14:36:16 UTC 2
+--55789-- 
+--55789-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--55789-- Page sizes: currently 4096, max supported 4096
+--55789-- Valgrind library directory: /usr/libexec/valgrind
+--55789-- Reading syms from /home/dmirty/tddProject/build/Desktop-Debug/test/UnorderedMap_t
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x23
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x23
+==55789== Valgrind: debuginfo reader: ensure_valid failed:
+==55789== Valgrind:   during call to ML_(img_get)
+==55789== Valgrind:   request for range [241417196, +4) exceeds
+==55789== Valgrind:   valid image size of 77448 for image:
+==55789== Valgrind:   "/home/dmirty/tddProject/build/Desktop-Debug/test/UnorderedMap_t"
+==55789== 
+==55789== Valgrind: debuginfo reader: Possibly corrupted debuginfo file.
+==55789== Valgrind: I can't recover.  Giving up.  Sorry.
+==55789== 

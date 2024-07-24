@@ -133,7 +133,7 @@ TEST(DemodulatorTest, TestDemodulatorInterface)
 {
     FileManager<int> F;
 
-    std::unique_ptr<IDemodulator<int>> D = std::make_unique<AmplitudeDemodulator>();
+    std::unique_ptr<IDemodulator<int>> D = std::make_unique<AmplitudeDemodulator<int>>();
     // IDemodulator<int>* D = new AmplitudeDemodulator();
     std::string filename("am_sound.dat");
     std::vector<std::complex<int>> complexSamples = F.getComplexSignalFromBinaryFile(filename);

@@ -29,7 +29,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 26,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
@@ -112,10 +112,6 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/dmirty/tddProject/TestTask/libs/tinywav"
-				},
-				{
-					"backtrace" : 4,
 					"path" : "/home/dmirty/tddProject/googletests/gtest/gtest/include"
 				},
 				{
@@ -164,10 +160,6 @@
 		},
 		{
 			"backtrace" : 4,
-			"id" : "Tinywav::@3a1a56b7b50ac43b2b93"
-		},
-		{
-			"backtrace" : 4,
 			"id" : "UnorderedMap::@6b1aa9f3150812fc0166"
 		},
 		{
@@ -212,10 +204,6 @@
 			},
 			{
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "../tinywav/libTinywav.a",
 				"role" : "libraries"
 			}
 		],

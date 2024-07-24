@@ -134,7 +134,8 @@ void FileManager<T>::writeToWavFile(std::string filename, std::vector<float>& de
     wavFileCore.writeDataBlock(demodulatedSignal);
 }
 
-std::vector<float> AmplitudeDemodulator::demodulate(std::vector<std::complex<int>>& complexSamples)
+template <typename T>
+std::vector<float> AmplitudeDemodulator<T>::demodulate(std::vector<std::complex<T>>& complexSamples)
 {
     std::vector<float> modulatingSignal(0);
     for(auto complexNumber: complexSamples) {
@@ -156,7 +157,8 @@ std::vector<float> AmplitudeDemodulator::demodulate(std::vector<std::complex<int
     return modulatingSignal;
 }
 
-std::vector<float> FrequencyDemodulator::demodulate(std::vector<std::complex<float>>& complexSamples)
+template <class T>
+std::vector<float> FrequencyDemodulator<T>::demodulate(std::vector<std::complex<T>>& complexSamples)
 {
     std::vector<float> demodulatedSignal(0);
     for(int i = 0; i < complexSamples.size() - 1; ++i) {
