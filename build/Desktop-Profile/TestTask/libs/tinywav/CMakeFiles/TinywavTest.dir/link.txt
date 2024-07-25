@@ -1,0 +1,1 @@
+/usr/bin/x86_64-linux-gnu-g++ -DQT_QML_DEBUG -O2 -g -DNDEBUG CMakeFiles/TinywavTest.dir/test/tests/BasicTests.cpp.o CMakeFiles/TinywavTest.dir/test/tests/FileReadTests.cpp.o CMakeFiles/TinywavTest.dir/test/main.cpp.o -o ../../../tddProject/binaries/TinywavTest  libTinywav.a 

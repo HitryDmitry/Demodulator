@@ -1,0 +1,103 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "TestTask/libs/tinywav/libTinywav.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"TestTask/libs/tinywav/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O2 -g -DNDEBUG"
+				},
+				{
+					"fragment" : "-std=gnu99"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/home/dmirty/tddProject/build/Desktop-Profile/TestTask/libs/tinywav"
+				},
+				{
+					"path" : "/home/dmirty/tddProject/TestTask/libs/tinywav"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "99"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "Tinywav::@3a1a56b7b50ac43b2b93",
+	"name" : "Tinywav",
+	"nameOnDisk" : "libTinywav.a",
+	"paths" : 
+	{
+		"build" : "TestTask/libs/tinywav",
+		"source" : "TestTask/libs/tinywav"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "TestTask/libs/tinywav/tinywav.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "TestTask/libs/tinywav/tinywav.h",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

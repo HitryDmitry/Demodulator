@@ -110,9 +110,6 @@ test/UnorderedMap_t: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/te
 test/UnorderedMap_t: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/build.make
 test/UnorderedMap_t: tddProject/binaries/lib/libUnorderedMap.so
 test/UnorderedMap_t: tddProject/binaries/lib/libgtest.so
-test/UnorderedMap_t: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3
-test/UnorderedMap_t: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3
-test/UnorderedMap_t: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
 test/UnorderedMap_t: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../test/UnorderedMap_t"
 	cd /home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/UnorderedMap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnorderedMap_t.dir/link.txt --verbose=$(VERBOSE)

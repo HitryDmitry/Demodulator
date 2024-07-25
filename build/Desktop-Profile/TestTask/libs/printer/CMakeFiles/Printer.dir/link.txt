@@ -1,0 +1,1 @@
+/usr/bin/x86_64-linux-gnu-g++ -fPIC -DQT_QML_DEBUG -O2 -g -DNDEBUG -shared -Wl,-soname,libPrinter.so -o libPrinter.so CMakeFiles/Printer.dir/source/printer.cpp.o 

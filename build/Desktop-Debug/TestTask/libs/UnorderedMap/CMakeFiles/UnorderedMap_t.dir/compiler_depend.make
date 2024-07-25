@@ -302,33 +302,13 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/UnorderedMap_test.
   ../../googletests/gtest/gtest/include/gtest/gtest-typed-test.h \
   ../../googletests/gtest/gtest/include/gtest/gtest_pred_impl.h \
   ../../TestTask/libs/UnorderedMap/include/unorderedmap.h \
+  /usr/include/c++/11/cstring \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  ../../TestTask/libs/UnorderedMap/include/UnorderedMap_global.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
-  /usr/include/c++/11/cstddef \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
-  /usr/include/c++/11/atomic \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+  ../../TestTask/libs/UnorderedMap/include/UnorderedMap_global.h
 
 TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../TestTask/libs/UnorderedMap/test/main.cpp \
   ../../googletests/gtest/gtest/include/gtest/gtest.h \
@@ -632,36 +612,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
   ../../googletests/gtest/gtest/include/gtest/gtest_pred_impl.h
 
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
-
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/11/bits/atomic_base.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h:
-
-/usr/include/c++/11/atomic:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
-
 ../../TestTask/libs/UnorderedMap/include/UnorderedMap_global.h:
 
 /usr/include/c++/11/bits/unordered_map.h:
@@ -860,8 +810,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 
 /usr/include/c++/11/bits/stringfwd.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/11/bits/stl_tree.h:
@@ -907,8 +855,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
@@ -980,8 +926,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 
 /usr/include/c++/11/bits/stl_pair.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
-
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
@@ -991,6 +935,8 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 /usr/include/c++/11/cwchar:
 
 /usr/include/c++/11/bits/nested_exception.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -1126,8 +1072,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 
 /usr/include/c++/11/system_error:
 
-/usr/include/c++/11/cstddef:
-
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/c++/11/ios:
@@ -1224,8 +1168,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 
 /usr/include/c++/11/bits/stl_heap.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h:
-
 /usr/include/c++/11/istream:
 
 /usr/include/c++/11/bits/istream.tcc:
@@ -1283,8 +1225,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap_t.dir/test/main.cpp.o: ../../
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
 

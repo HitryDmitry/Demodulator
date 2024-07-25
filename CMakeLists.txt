@@ -42,7 +42,7 @@ endif()
 
 add_executable(tddProject main.cpp)
 
-target_link_libraries(${PROJECT_NAME} Demodulator Printer exampleProject)
+target_link_libraries(${PROJECT_NAME} UnorderedMap Demodulator Printer exampleProject)
 
 if(UNIX)
         add_custom_target( distclean COMMAND find . -name *_automoc.cpp -type f -delete

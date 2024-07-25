@@ -92,9 +92,6 @@ UnorderedMap_EXTERNAL_OBJECTS =
 
 tddProject/binaries/lib/libUnorderedMap.so: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 tddProject/binaries/lib/libUnorderedMap.so: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/build.make
-tddProject/binaries/lib/libUnorderedMap.so: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3
-tddProject/binaries/lib/libUnorderedMap.so: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3
-tddProject/binaries/lib/libUnorderedMap.so: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
 tddProject/binaries/lib/libUnorderedMap.so: TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dmirty/tddProject/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library ../../../tddProject/binaries/lib/libUnorderedMap.so"
 	cd /home/dmirty/tddProject/build/Desktop-Debug/TestTask/libs/UnorderedMap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnorderedMap.dir/link.txt --verbose=$(VERBOSE)

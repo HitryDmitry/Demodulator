@@ -180,6 +180,9 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/hashtable.h \
@@ -193,58 +196,8 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
-  ../../TestTask/libs/UnorderedMap/include/UnorderedMap_global.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
-  /usr/include/c++/11/cstddef \
-  /usr/include/assert.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
-  /usr/include/c++/11/atomic \
-  /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_heap.h \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+  ../../TestTask/libs/UnorderedMap/include/UnorderedMap_global.h
 
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h:
-
-/usr/include/c++/11/bits/stl_heap.h:
-
-/usr/include/c++/11/bits/algorithmfwd.h:
-
-/usr/include/c++/11/bits/stl_algo.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
 
 /usr/include/c++/11/bits/erase_if.h:
 
@@ -257,6 +210,10 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 /usr/include/c++/11/bits/hashtable_policy.h:
 
 /usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/string.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -276,8 +233,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/c++/11/bits/basic_ios.h:
 
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
 /usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/c++/11/stdexcept:
@@ -292,11 +247,7 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/c++/11/bits/functional_hash.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
-
 /usr/include/c++/11/bits/charconv.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -334,15 +285,11 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
-
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/ctype.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
 
 /usr/include/c++/11/initializer_list:
 
@@ -374,27 +321,19 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/stdint.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
-
 /usr/include/c++/11/bits/exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/c++/11/cstddef:
-
 /usr/include/c++/11/bits/range_access.h:
-
-/usr/include/assert.h:
 
 /usr/include/c++/11/cstdlib:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h:
 
@@ -440,8 +379,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/c++/11/ios:
@@ -454,8 +391,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -467,8 +402,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 /usr/include/c++/11/ext/atomicity.h:
 
 /usr/include/c++/11/bits/stl_function.h:
-
-/usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
@@ -498,13 +431,9 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
-
 /usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/c++/11/clocale:
-
-/usr/include/c++/11/atomic:
 
 /usr/include/c++/11/bits/exception_defines.h:
 
@@ -535,8 +464,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 /usr/include/c++/11/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/c++/11/bits/uniform_int_dist.h:
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
@@ -630,9 +557,9 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h:
-
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/strings.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -647,8 +574,6 @@ TestTask/libs/UnorderedMap/CMakeFiles/UnorderedMap.dir/source/unorderedmap.cpp.o
 /usr/include/c++/11/ext/alloc_traits.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
-
-/usr/include/c++/11/algorithm:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
