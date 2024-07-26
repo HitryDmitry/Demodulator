@@ -6,7 +6,17 @@
 #include <unordered_map>
 #include "UnorderedMap_global.h"
 
-#define CAPACITY 50000 // Size of the Hash Table
+
+// таблица для рехэширования
+const int rehashing_table[51] = {
+    2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+    31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+    73, 79, 83, 89, 97, 103, 109, 113, 127, 137,
+    139, 149, 157, 167, 179, 193, 199, 211, 227, 241,
+    257, 277, 293, 313, 337, 359, 383, 409, 439, 467, 503
+};
+
+#define CAPACITY 50000
 
 // структура элемента
 template <typename Key, typename Value>
@@ -112,15 +122,7 @@ void free_linkedlist(LinkedList<Key, Value>* list)
 // структура хэш-таблицы
 template <typename Key, typename Value>
 struct HashTable {
-    // хэш-функция
-    unsigned long hash_function(const char* str)
-    {
-        unsigned long i = 0;
-        for(int j = 0; str[j]; j++)
-            i += str[j];
-        return i % CAPACITY;
-    }
-
+public:
     // функция для создания элемента
     Item<Key, Value>* create_item(Key key, Value value)
     {
@@ -132,35 +134,35 @@ struct HashTable {
 
     void remove(Key key){
         int index = hash_function(key);
-        Item* item = this->items[index];
-        LinkedList* head = this->overflow_buckets[index];
+        Item<Key, Value>* item = this->items[index];
+        LinkedList<Key, Value>* head = this->overflow_buckets[index];
 
         if (item != nullptr){
             // Если нет коллизий
-            if (head == nullptr && item->key == key){
+            if (head == nullptr && *item->key == key){
                 this->items[index] = nullptr;
                 free_item(item);
-                table->count--;
+                this->count--;
             }
             // Есть коллизии
             else if (head != nullptr){
-                if (item->key == key) {
+                if (*item->key == key) {
                     free_item(item);
-                    LinkedList* node = head;
+                    LinkedList<Key, Value>* node = head;
                     head = head->next;
                     node->next = nullptr;
-                    table->items[index] = create_item(node->item->key, node->item->value);
+                    this->items[index] = create_item(*node->item->key, *node->item->value);
                     free_linkedlist(node);
                     this->overflow_buckets[index] = head;
                 }
             }
 
-            LinkedList* curr = head;
-            LinkedList* prev = nullptr;
+            LinkedList<Key, Value>* curr = head;
+            LinkedList<Key, Value>* prev = nullptr;
 
 
             while (curr) {
-                if (item->key == key) {
+                if (*curr->item->key == key) {
                     if (prev == nullptr) {
                         // First element of the chain. Remove the chain
                         free_linkedlist(head);
@@ -172,7 +174,7 @@ struct HashTable {
                         prev->next = curr->next;
                         curr->next = nullptr;
                         free_linkedlist(curr);
-                        table->overflow_buckets[index] = head;
+                        this->overflow_buckets[index] = head;
                         return;
                     }
                 }
@@ -206,15 +208,18 @@ struct HashTable {
         // получаем индекс для вставки
         int index = hash_function(key);
 
+        // если полученный индекс больше размера таблицы - рехэшируем
+        if (index > this->size){
+            rehash(index);
+        }
+        ///!!!!!! проверить, что функция rehash корректно все копирует!!!!
         Item<Key, Value>* current_item = this->items[index];
 
+        // если такого элемента еще не существует
         if(current_item == NULL) {
-            // если такого ключа еще не существует
+            // таблица уже наполнена
             if(this->count == this->size) {
-                // таблица уже наполнена, и вставить не получится
-                printf("Insert Error: Hash Table is full\n");
-                delete item;
-                return;
+                rehash(this->size + 1);
             }
 
             // вставка
@@ -245,12 +250,12 @@ struct HashTable {
                 return *item->value;
             }
             if (head == nullptr){
-                return nullptr;
+                return NULL;
             }
             item = head->item;
             head = head->next;
         }
-        return nullptr;
+        return NULL;
     }
 
     void print_table()
@@ -264,24 +269,116 @@ struct HashTable {
         printf("-------------------\n\n");
     }
 
+
     LinkedList<Key, Value>** overflow_buckets;
     Item<Key, Value>** items;
     int size;
     int count;
+    int index_in_rehashing_table;
+
+    // функция для создания переполненных корзин
+    LinkedList<Key, Value>** create_overflow_buckets()
+    {
+        // Create the overflow buckets; an array of linkedlists
+        LinkedList<Key, Value>** buckets = new(LinkedList<Key, Value>* [this->size]);
+        for(int i = 0; i < this->size; i++)
+            buckets[i] = NULL;
+        return buckets;
+    }
+
+    // функция для освобождения переполненных корзин
+    void free_overflow_buckets()
+    {
+        // Free all the overflow bucket lists
+        LinkedList<Key, Value>** buckets = this->overflow_buckets;
+        for(int i = 0; i < this->size; i++)
+            free_linkedlist(buckets[i]);
+        delete[] buckets;
+    }
+
+    // функция для копирования элементов из старого массива в новый
+    void rewriteItems(int old_size, int new_size){
+        Item<Key, Value>** new_items = new(Item<Key, Value>* [this->size]);
+        Item<Key, Value>** old_items = this->items;
+        // заполняем нулевыми указателями новый массив
+        for(int i = 0; i < new_size; i++){
+            new_items[i] = nullptr;
+        }
+
+        // копируем старые значения элементов в новый массив указателей с новыми хэшами
+        for(int i = 0; i < old_size; i++){
+            new_items[i] = old_items[i];
+        }
+        // обновляем массив у текущего объекта
+        this->items = new_items;
+        // удаляем старый
+        for (int i = 0; i < old_size; ++i){
+            if(old_items[i])
+                free_item(old_items[i]);
+        }
+        delete[] old_items;
+    }
+
+    void rewriteOverflowBuckets(int old_size){
+        // создаем новый массив переполненных корзин
+        LinkedList<Key, Value>** new_list = create_overflow_buckets();
+        // копируем туда значения из старого
+        for(int i = 0; i < old_size; i++){
+            new_list[i] = this->overflow_buckets[i];
+        }
+        LinkedList<Key, Value>** ptr_to_old_list = this->overflow_buckets;
+        // обновляем значение списка коллизий
+        this->overflow_buckets = new_list;
+        // удаляем старый список
+        for (int i = 0; i < old_size; i++){
+            free_linkedlist(ptr_to_old_list[i]);
+        }
+        delete[] ptr_to_old_list;
+    }
+
+    // поиск подходящего размера по переданному индексу
+    int find_value_rehashing_table(int index){
+        int ind_rehash_table = 0;
+        while (index > rehashing_table[ind_rehash_table]){
+            ++ind_rehash_table;
+        }
+        return ind_rehash_table;
+    }
+
+    // функция для рехэширования
+    void rehash(int index){
+        int old_size = this->size;
+        this->index_in_rehashing_table = find_value_rehashing_table(index);
+        this->size = rehashing_table[this->index_in_rehashing_table];
+        int new_size = this->size;
+        rewriteItems(old_size, new_size);
+        rewriteOverflowBuckets(old_size);
+    }
+
+    // хэш-функция
+    unsigned long hash_function(const char* str)
+    {
+        unsigned long i = 0;
+        for(int j = 0; str[j]; j++)
+            i += str[j];
+        return i % CAPACITY;
+    }
 };
 
 // функция для создания хэш-таблицы
 template <typename Key, typename Value>
-HashTable<Key, Value>* create_table(int size)
+HashTable<Key, Value>* create_table()
 {
     HashTable<Key, Value>* table = new HashTable<Key, Value>();
+    table->index_in_rehashing_table = 0;
+    int size = rehashing_table[table->index_in_rehashing_table];
     table->size                  = size;
     table->count                 = 0;
     table->items                 = new(Item<Key, Value>* [size]);
     for(int i = 0; i < table->size; i++)
         table->items[i] = nullptr;
 
-    table->overflow_buckets = create_overflow_buckets(table);
+    table->overflow_buckets = table->create_overflow_buckets();
     return table;
 }
 
@@ -296,31 +393,9 @@ void free_table(HashTable<Key, Value>* table)
         }
     }
 
-    free_overflow_buckets(table);
+    table->free_overflow_buckets();
     delete[] table->items;
     delete table;
-}
-
-// функция для создания переполненных корзин
-template <typename Key, typename Value>
-LinkedList<Key, Value>** create_overflow_buckets(HashTable<Key, Value>* table)
-{
-    // Create the overflow buckets; an array of linkedlists
-    LinkedList<Key, Value>** buckets = new(LinkedList<Key, Value>* [table->size]);
-    for(int i = 0; i < table->size; i++)
-        buckets[i] = NULL;
-    return buckets;
-}
-
-// функция для освобождения переполненных корзин
-template <typename Key, typename Value>
-void free_overflow_buckets(HashTable<Key, Value>* table)
-{
-    // Free all the overflow bucket lists
-    LinkedList<Key, Value>** buckets = table->overflow_buckets;
-    for(int i = 0; i < table->size; i++)
-        free_linkedlist(buckets[i]);
-    delete[] buckets;
 }
 
 // #include "unorderedmap.cpp"
