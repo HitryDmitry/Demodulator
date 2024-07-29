@@ -31,12 +31,6 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 11,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
 				"line" : 12,
 				"parent" : 0
 			},
@@ -50,6 +44,12 @@
 				"command" : 1,
 				"file" : 0,
 				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 15,
 				"parent" : 0
 			}
 		]
@@ -97,7 +97,7 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				2
+				3
 			]
 		}
 	],
@@ -127,14 +127,15 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		},
 		{
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				2
+				3
 			]
 		}
 	],
@@ -143,6 +144,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "TestTask/libs/UnorderedMap/include/UnorderedMap_global.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "TestTask/libs/UnorderedMap/include/list.h",
 			"sourceGroupIndex" : 0
 		},
 		{
